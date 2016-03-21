@@ -1,25 +1,9 @@
+<script src="constable.js"></script>
 <script src="https://code.jquery.com/jquery-2.2.2.min.js"
 integrity="sha256-36cp2Co+/62rEAAYHLmRCPIych47CvdM+uTBJwSzWjI="
 crossorigin="anonymous"></script>
-
 <script>
-  var root = 'http://localhost:4000/api';
-  var local = 'file:///Users/ashley/thoughtbot/constable_clone/';
-
-  var request = $.ajax({
-    url: root + '/announcements',
-    method: 'GET'
-  }).done(function(data) {
-    console.log(data);
-    var announcements = data.announcements;
-
-    announcements.forEach(function(announcement){
-    $("#response").append(
-        '<a href=' + local + '/announcement.html?id=' + (announcement['id']) + '>'+
-        announcement['title'] + " " +"<br/> <br/>"+
-        '</a>')
-    });
-  });
+  getAnnouncements()
 </script>
 
 <a href = "file:///Users/ashley/thoughtbot/constable_clone/search.html"> Search </a>
