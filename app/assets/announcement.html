@@ -1,0 +1,12 @@
+<script src="https://code.jquery.com/jquery-2.2.2.min.js"
+integrity="sha256-36cp2Co+/62rEAAYHLmRCPIych47CvdM+uTBJwSzWjI="
+crossorigin="anonymous"></script>
+<script src="app.js"></script>
+<script>
+  var id = location.search.split("id=")[1]
+  app = require('application').constableApi;
+  api = new app;
+  api.showAnnouncement(id);
+</script>
+
+<div id="response"></div>
