@@ -1,0 +1,25 @@
+<script src="https://code.jquery.com/jquery-2.2.2.min.js"
+integrity="sha256-36cp2Co+/62rEAAYHLmRCPIych47CvdM+uTBJwSzWjI="
+crossorigin="anonymous"></script>
+
+<script>
+  var root = 'http://localhost:4000/api';
+
+  var id = location.search.split('id=')[1]
+
+  function showAnnouncement(id){
+    $.ajax({
+      url: root + '/announcements/' + id,
+      method: 'GET'
+    }).done(function(data) {
+      console.log(data);
+
+      $("#response").append(
+        data.announcement['body'] + " " +"<br/> <br/>")
+    });
+  };
+
+  showAnnouncement(id)
+</script>
+
+<div id="response"></div>
