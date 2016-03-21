@@ -35,5 +35,13 @@
       url: root + '/searches',
       method: 'POST',
       data: {query: query }
+    }).done(function(data) {
+      var announcements = data.announcements.forEach(function(announcement){
+      $("#response").append(
+          '<a href=' + local + '/announcement.html?id=' + (announcement['id']) + '>'+
+          announcement['title'] + " " +"<br/> <br/>"+
+          '</a>')
+      });
+      $("#response").append(announcements)
     });
   };
