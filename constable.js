@@ -6,14 +6,13 @@
       url: root + '/announcements',
       method: 'GET'
     }).done(function(data) {
-      console.log(data);
       var announcements = data.announcements;
 
       announcements.forEach(function(announcement){
       $("#response").append(
-          '<a href=' + local + '/announcement.html?id=' + (announcement['id']) + '>'+
-          announcement['title'] + " " +"<br/> <br/>"+
-          '</a>')
+          "<a href=" + local + "/announcement.html?id=" + (announcement["id"]) + ">"+
+          announcement["title"] + " " +"<br/> <br/>"+
+          "</a>")
       });
     });
   };
@@ -23,10 +22,8 @@
       url: root + '/announcements/' + id,
       method: 'GET'
     }).done(function(data) {
-      console.log(data);
-
       $("#response").append(
-        data.announcement['body'] + " " +"<br/> <br/>")
+        data.announcement["body"] + " " +"<br/> <br/>")
     });
   };
 
@@ -38,9 +35,9 @@
     }).done(function(data) {
       var announcements = data.announcements.forEach(function(announcement){
       $("#response").append(
-          '<a href=' + local + '/announcement.html?id=' + (announcement['id']) + '>'+
-          announcement['title'] + " " +"<br/> <br/>"+
-          '</a>')
+          "<a href=" + local + "/announcement.html?id=" + (announcement["id"]) + ">"+
+          announcement["title"] + " " +"<br/> <br/>"+
+          "</a>")
       });
       $("#response").append(announcements)
     });
