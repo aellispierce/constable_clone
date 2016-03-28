@@ -1,10 +1,10 @@
-<script src="constable.js"></script>
 <script src="https://code.jquery.com/jquery-2.2.2.min.js"
 integrity="sha256-36cp2Co+/62rEAAYHLmRCPIych47CvdM+uTBJwSzWjI="
 crossorigin="anonymous"></script>
+<script src="app.js"></script>
 <script>
-  getAnnouncements()
+  var id = location.search.split("id=")[1]
+  require('application').showAnnouncement(id)
 </script>
 
-<a href = "file:///Users/ashley/thoughtbot/constable_clone/search.html"> Search </a>
 <div id="response"></div>
