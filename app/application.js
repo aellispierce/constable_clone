@@ -5,7 +5,8 @@ var origin = window.location.origin;
 
 var App = {
     init: function init() {
-          console.log('App initialized.');
+          $("body").prepend(
+              `<a href = ${origin}/new.html> + </a>`)
             },
     getAnnouncements: function getAnnouncements(){
       $.ajax({
@@ -21,7 +22,6 @@ var App = {
         });
       });
     },
-
     showAnnouncement: function showAnnouncement(id){
       $.ajax({
         url: root + '/announcements/' + id,
