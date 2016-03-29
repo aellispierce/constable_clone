@@ -1,0 +1,24 @@
+<body>
+  <script src="https://code.jquery.com/jquery-2.2.2.min.js"
+  integrity="sha256-36cp2Co+/62rEAAYHLmRCPIych47CvdM+uTBJwSzWjI="
+  crossorigin="anonymous"></script>
+  <script src="app.js"></script>
+  <h2>New Announcement</h2>
+
+  <form id="new">
+    Title:<br>
+    <input type="text" name="announcement[title]"> <br>
+    Body:<br>
+    <textarea name="announcement[body]"></textarea><br>
+    Interests:<br>
+    <input type="text" name="interest_names"> <br> <br>
+    <input type="submit" value="Submit">
+  </form>
+  <script>
+    app = require('constable-api');
+    api = new app;
+    $("#new").submit(function(e) {
+      api.validateForm(e);
+    });
+  </script>
+</body>

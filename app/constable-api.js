@@ -27,13 +27,22 @@ class ConstableApi {
   newAnnouncement(){
     $.ajax({
       url: path.announcements(),
-      method: 'post',
+      method: 'POST',
       dataType: 'application/json',
       data: $("#new").serializeArray()
-    }).done(function(data) {
-      $("#response").append(
-          `${data.announcement["body"]} <br/> <br/>`)
     });
+  }
+  validateForm(e) {
+    const formData= $("#new").serializeArray();
+    if(formData[0]["value"] == ""){
+      $("body").append('Title is required');
+      e.preventDefault();
+    } else if (formData[1]["value"] == ""){
+      $("body").append('Body is required');
+      e.preventDefault();
+    } else {
+      this.newAnnouncement();
+    }
   }
 }
 module.exports = ConstableApi

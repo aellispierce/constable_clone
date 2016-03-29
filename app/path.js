@@ -11,6 +11,5 @@ class Path {
   show_announcement(id) {
     return `${root}/announcements/${id}`
   }
-
 }
 module.exports = Path
