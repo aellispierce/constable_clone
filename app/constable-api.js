@@ -25,7 +25,6 @@ class ConstableApi {
   }
 
   newAnnouncement(){
-    console.log($("#new").serializeArray())
     $.ajax({
       url: path.announcements(),
       method: 'POST',
@@ -37,7 +36,6 @@ class ConstableApi {
     });
   }
   validateForm(e) {
-
     const formData= $("#new").serializeArray();
     if(formData[0]["value"] == ""){
       $("body").append('Title is required');
