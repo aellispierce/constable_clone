@@ -30,9 +30,6 @@ class ConstableApi {
       method: 'POST',
       dataType: 'application/json',
       data: $("#new").serializeArray()
-    }).done(function(data) {
-      $("#response").append(
-          `${data.announcement["body"]} <br/> <br/>`)
     });
   }
   validateForm(e) {
