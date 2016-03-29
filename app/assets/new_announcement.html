@@ -9,7 +9,7 @@
     Title:<br>
     <input type="text" name="announcement[title]"> <br>
     Body:<br>
-    <textarea name="announcement[body]"> </textarea><br>
+    <textarea name="announcement[body]"></textarea><br>
     Interests:<br>
     <input type="text" name="interest_names"> <br> <br>
     <input type="submit" value="Submit">
@@ -18,8 +18,7 @@
     app = require('constable-api');
     api = new app;
     $("#new").submit(function(e) {
-      api.newAnnouncement();
-      e.preventDefault();
+      api.validateForm(e);
     });
   </script>
 </body>
