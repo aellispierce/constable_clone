@@ -36,7 +36,6 @@ var App = {
     }
 
     newAnnouncement(){
-      console.log("MADE IT");
       $.ajax({
         url: root + '/announcements',
         method: 'post',
