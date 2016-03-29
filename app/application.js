@@ -1,26 +1,33 @@
 "use strict";
 
-var root = 'http://localhost:4000/api';
-var origin = window.location.origin;
+const root = 'http://localhost:4000/api';
+const origin = window.location.origin;
+
+function link(id, text){
+  return `<a href= ${origin}/announcement.html?id=${id}>${text}<br/><br/></a>`
+}
 
 var App = {
   init: function init() {
     $("body").prepend(
         `<a href = ${origin}/new.html> + </a>`)
   },
-  constableApi: class ConstableApi {
+  path: class Path {
+    announcements() {
+      `${root}/announcements`
+    }
 
+  },
+  constableApi: class ConstableApi {
     getAnnouncements(){
       $.ajax({
-        url: root + '/announcements',
+        url: Path.announcements(),
         method: 'GET'
       }).done(function(data) {
         var announcements = data.announcements;
 
         announcements.forEach(function(announcement){
-          $("#response").append(
-              `<a href= ${origin}/announcement.html?id=${(announcement["id"])}>
-              ${announcement["title"]} <br/> <br/></a>`)
+          $("#response").append(link(announcement["id"], announcement["title"]))
         });
       });
     }
