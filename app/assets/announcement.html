@@ -4,7 +4,7 @@ crossorigin="anonymous"></script>
 <script src="app.js"></script>
 <script>
   var id = location.search.split("id=")[1]
-  app = require('application').constableApi;
+  app = require('constable-api');
   api = new app;
   api.showAnnouncement(id);
 </script>
