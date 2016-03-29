@@ -25,9 +25,10 @@ class ConstableApi {
   }
 
   newAnnouncement(){
+    console.log($("#new").serializeArray())
     $.ajax({
       url: path.announcements(),
-      method: 'post',
+      method: 'POST',
       dataType: 'application/json',
       data: $("#new").serializeArray()
     }).done(function(data) {
