@@ -14,7 +14,7 @@ var App = {
   },
   path: class Path {
     announcements() {
-      `${root}/announcements`
+      return `${root}/announcements`
     }
 
   },
