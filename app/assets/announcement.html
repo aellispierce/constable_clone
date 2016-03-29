@@ -4,7 +4,9 @@ crossorigin="anonymous"></script>
 <script src="app.js"></script>
 <script>
   var id = location.search.split("id=")[1]
-  require('application').showAnnouncement(id)
+  app = require('application').constableApi;
+  api = new app;
+  api.showAnnouncement(id);
 </script>
 
 <div id="response"></div>
