@@ -17,21 +17,6 @@ class Announcement {
     });
   }
 
-  show(id){
-    this.find(id).done(function(data){
-      $("#response").append(
-          `${data.announcement["body"]} <br/> <br/>`)
-    });
-  }
-
-  index(){
-    this.all().done(function(data){
-      data.announcements.forEach(function(announcement){
-        $("#response").append(path.link(announcement["id"], announcement["title"]))
-      });
-    });
-  }
-
   validate(e){
     e.preventDefault();
     const formData= $("#new").serializeArray();
