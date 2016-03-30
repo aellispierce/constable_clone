@@ -15,18 +15,10 @@
     <input type="submit" value="Submit">
   </form>
   <script>
-    app = require('announcement');
-    announcement = new app;
-    $("#new").submit(function(e) {
-      e.preventDefault();
-      const formData= $("#new").serializeArray();
-      if(formData[0]["value"] == ""){
-        $("body").append('Title is required');
-      } else if (formData[1]["value"] == ""){
-        $("body").append('Body is required');
-      } else {
-        announcement.create()
-      }
-    });
+  Announcement = require('announcement');
+  announcement = new Announcement;
+  $("#new").submit(function(e) {
+    announcement.validate(e);
+  })
   </script>
 </body>

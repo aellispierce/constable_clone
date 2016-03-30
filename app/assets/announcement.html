@@ -6,7 +6,7 @@ crossorigin="anonymous"></script>
   var id = location.search.split("id=")[1]
   app = require('announcement');
   announcement = new app;
-  announcement.find(id).done(function(data){ announcement.show(data) })
+  announcement.show(id)
 </script>
 
 <div id="response"></div>

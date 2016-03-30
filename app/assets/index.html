@@ -5,10 +5,9 @@
   <script src="app.js"></script>
   <script>require('application').init()</script>
   <script>
-    app = require('announcement');
-    announcement = new app;
-    announcements = announcement.all();
-    announcements.done(function(data){ announcement.index(data) })
+    Announcement = require('announcement');
+    announcement = new Announcement;
+    announcements = announcement.index();
   </script>
   <div id="response"></div>
 </body>
