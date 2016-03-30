@@ -2,47 +2,19 @@ Path = require('path');
 const path = new Path;
 
 class ConstableApi {
-  getAnnouncements(){
-    $.ajax({
-      url: path.announcements(),
+  get(url){
+    return $.ajax({
+      url: url,
       method: 'GET'
-    }).done(function(data) {
-      var announcements = data.announcements;
-      announcements.forEach(function(announcement){
-        $("#response").append(path.link(announcement["id"], announcement["title"]))
-      });
-    });
+    })
   }
 
-  showAnnouncement(id){
+  post(url, data) {
     $.ajax({
-      url: path.show_announcement(id),
-      method: 'GET'
-    }).done(function(data) {
-      $("#response").append(
-          `${data.announcement["body"]} <br/> <br/>`)
-    });
-  }
-
-  newAnnouncement(){
-    $.ajax({
-      url: path.announcements(),
+      url: url,
       method: 'POST',
-      dataType: 'application/json',
-      data: $("#new").serializeArray()
-    });
-  }
-  validateForm(e) {
-    const formData= $("#new").serializeArray();
-    if(formData[0]["value"] == ""){
-      $("body").append('Title is required');
-      e.preventDefault();
-    } else if (formData[1]["value"] == ""){
-      $("body").append('Body is required');
-      e.preventDefault();
-    } else {
-      this.newAnnouncement();
-    }
+      data: data
+    })
   }
 }
 module.exports = ConstableApi

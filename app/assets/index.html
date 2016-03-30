@@ -5,9 +5,10 @@
   <script src="app.js"></script>
   <script>require('application').init()</script>
   <script>
-    app = require('constable-api');
-    api = new app;
-    api.getAnnouncements();
+    app = require('announcement');
+    announcement = new app;
+    announcements = announcement.all();
+    announcements.done(function(data){ announcement.index(data) })
   </script>
   <div id="response"></div>
 </body>

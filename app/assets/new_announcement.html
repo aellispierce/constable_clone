@@ -15,10 +15,18 @@
     <input type="submit" value="Submit">
   </form>
   <script>
-    app = require('constable-api');
-    api = new app;
+    app = require('announcement');
+    announcement = new app;
     $("#new").submit(function(e) {
-      api.validateForm(e);
+      e.preventDefault();
+      const formData= $("#new").serializeArray();
+      if(formData[0]["value"] == ""){
+        $("body").append('Title is required');
+      } else if (formData[1]["value"] == ""){
+        $("body").append('Body is required');
+      } else {
+        announcement.create()
+      }
     });
   </script>
 </body>

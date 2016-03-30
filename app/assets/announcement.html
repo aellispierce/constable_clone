@@ -4,9 +4,9 @@ crossorigin="anonymous"></script>
 <script src="app.js"></script>
 <script>
   var id = location.search.split("id=")[1]
-  app = require('constable-api');
-  api = new app;
-  api.showAnnouncement(id);
+  app = require('announcement');
+  announcement = new app;
+  announcement.find(id).done(function(data){ announcement.show(data) })
 </script>
 
 <div id="response"></div>
