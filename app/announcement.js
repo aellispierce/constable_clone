@@ -13,8 +13,7 @@ class Announcement {
   }
 
   find(id){
-     return api.get(path.show_announcement(id)).done(function(data) {
-    });
+     return api.get(path.show_announcement(id))
   }
 
 }

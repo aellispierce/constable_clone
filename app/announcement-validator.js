@@ -6,11 +6,11 @@ class AnnouncementValidator {
     const title = formData[0]["value"]
     const body = formData[1]["value"]
     if(title == ""){
-      $("body").append('Title is required');
+      return {valid: false, error: 'Title is required'};
     } else if (body == ""){
-      $("body").append('Body is required');
+      return {valid: false, error: 'Body is required'}
     } else {
-      announcement.create(formData)
+      return {valid: true, error: null}
     }
   }
 }

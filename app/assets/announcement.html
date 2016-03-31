@@ -4,9 +4,8 @@ crossorigin="anonymous"></script>
 <script src="app.js"></script>
 <script>
   var id = location.search.split("id=")[1]
-  AnnouncementPresenter = require('announcement-presenter');
-  announcement = new AnnouncementPresenter;
-  announcement.show(id)
+  app = require('application');
+  app.showAnnouncement(id)
 </script>
 
 <div id="response"></div>

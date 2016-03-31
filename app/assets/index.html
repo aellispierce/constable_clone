@@ -5,9 +5,8 @@
   <script src="app.js"></script>
   <script>require('application').init()</script>
   <script>
-    AnnouncementPresenter = require('announcement-presenter');
-    presenter = new AnnouncementPresenter;
-    announcements = presenter.index();
+    app = require('application');
+    app.allAnnouncements();
   </script>
   <div id="response"></div>
 </body>
