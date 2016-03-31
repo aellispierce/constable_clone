@@ -8,8 +8,8 @@ class Announcement {
      return api.get(path.announcements())
   }
 
-  create(){
-     return api.post(path.announcements(), $("#new").serializeArray())
+  create(formData){
+     return api.post(path.announcements(), formData)
   }
 
   find(id){
@@ -17,17 +17,6 @@ class Announcement {
     });
   }
 
-  validate(e){
-    e.preventDefault();
-    const formData= $("#new").serializeArray();
-    if(formData[0]["value"] == ""){
-      $("body").append('Title is required');
-    } else if (formData[1]["value"] == ""){
-      $("body").append('Body is required');
-    } else {
-      announcement.create()
-    }
-  }
 }
 
 module.exports = Announcement

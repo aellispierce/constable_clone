@@ -15,10 +15,11 @@
     <input type="submit" value="Submit">
   </form>
   <script>
-  Announcement = require('announcement');
-  announcement = new Announcement;
+  Validator = require('announcement-validator');
+  validator = new Validator;
   $("#new").submit(function(e) {
-    announcement.validate(e);
+    e.preventDefault();
+    validator.validate($("#new").serializeArray());
   })
   </script>
 </body>
